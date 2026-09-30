@@ -17,7 +17,7 @@ Edit `research.html`. Each paper is an `<article class="paper"> ... </article>` 
 
 ## Files currently linked externally
 
-- CV: Google Drive
+- CV: Google Drive (linked from the home page)
 - Several papers: Google Drive
 - SSRN pages: external links
 
