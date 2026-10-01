@@ -87,27 +87,32 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--ink); 
 .page-heading h1 { margin: 0 0 18px; font-size: clamp(2.5rem, 6vw, 4.2rem); letter-spacing: -.03em; }
 .page-heading p:not(.eyebrow) { color: var(--muted); font-size: 1.13rem; }
 
-/* Research page: single-column sections with generous spacing. */
+/* Research page: two-column layout with section labels on the left. */
 .research-page { padding-top: 66px; }
 .research-section {
-  padding: 0 0 54px;
-  margin: 0 0 54px;
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  column-gap: 58px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
 }
-.research-section:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+.research-section:first-child {
+  padding-top: 0;
+  border-top: none;
 }
 .research-section > h2 {
-  margin: 0 0 30px;
-  font-size: 1.8rem;
+  grid-column: 1;
+  margin: 3px 0 0;
+  font-size: 1.55rem;
   white-space: nowrap;
 }
-.paper-list { max-width: 930px; }
+.paper-list {
+  grid-column: 2;
+  min-width: 0;
+}
 .paper {
-  padding: 0 0 28px;
-  margin: 0 0 28px;
+  padding: 0 0 30px;
+  margin: 0 0 30px;
   border-bottom: 1px solid var(--line);
 }
 .paper:last-child {
@@ -115,24 +120,28 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--ink); 
   padding-bottom: 0;
   border-bottom: none;
 }
-.paper h3 { margin: 0 0 10px; font-size: 1.42rem; }
+.paper h3 { margin: 0 0 10px; font-size: 1.38rem; }
 .paper p { margin: 0 0 10px; color: #434e59; }
 .paper p:last-child { margin-bottom: 0; }
 .paper-meta { color: var(--muted); font-size: .82rem; font-weight: 700; letter-spacing: .02em; }
 
 /* Teaching page. */
 .teaching-heading { margin-bottom: 46px; }
-.teaching-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.teaching-grid { display: grid; grid-template-columns: .82fr 1.09fr 1.09fr; gap: 18px; }
 .course-card {
   min-height: 190px;
   display: flex;
   flex-direction: column;
-  padding: 28px;
+  padding: 22px;
 }
 .course-card h2 {
   margin: 0 0 18px;
-  font-size: clamp(1.12rem, 1.45vw, 1.30rem);
+  font-size: 1.28rem;
+  letter-spacing: -.01em;
   white-space: nowrap;
+}
+.micro-course h2 {
+  font-size: 1.02rem;
 }
 .course-meta {
   display: flex;
@@ -186,8 +195,19 @@ footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .82r
   .hero h1 { font-size: 2.75rem; }
   .section-grid, .paper-preview-grid { grid-template-columns: 1fr; gap: 28px; }
   .research-page { padding-top: 52px; }
-  .research-section { margin-bottom: 42px; padding-bottom: 42px; }
-  .research-section > h2 { margin-bottom: 24px; font-size: 1.55rem; white-space: normal; }
+  .research-section {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    padding: 42px 0;
+  }
+  .research-section:first-child { padding-top: 0; }
+  .research-section > h2 {
+    grid-column: 1;
+    margin: 0;
+    font-size: 1.45rem;
+    white-space: normal;
+  }
+  .paper-list { grid-column: 1; }
   .paper h3 { font-size: 1.28rem; }
   .footer-inner { align-items: flex-start; justify-content: center; flex-direction: column; gap: 4px; padding: 24px 0; }
 }
