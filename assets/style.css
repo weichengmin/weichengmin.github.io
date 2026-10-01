@@ -47,7 +47,7 @@ nav a.active, nav a:hover { color: var(--ink); }
 
 .hero {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 235px 1fr;
   gap: 70px;
   align-items: center;
   padding-top: 82px;
@@ -55,10 +55,9 @@ nav a.active, nav a:hover { color: var(--ink); }
 }
 .portrait-wrap { text-align: center; }
 .portrait {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 14px 40px rgba(28, 34, 41, .10);
 }
