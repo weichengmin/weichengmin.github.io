@@ -89,8 +89,9 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--ink); 
 
 /* Research page: two-column layout with section labels on the left. */
 .research-page {
-  padding-top: 66px;
-  width: min(1220px, calc(100% - 40px));
+  width: min(1180px, calc(100% - 80px));
+  margin-left: auto;
+  margin-right: auto;
 }
 .research-section {
   display: grid;
